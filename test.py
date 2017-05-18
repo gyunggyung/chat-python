@@ -6,8 +6,8 @@ while True:
 	line = f.readline()
 	if not line:
 		break
-	lyrics.append(line[:-2])
-	word += len(line[:-2])
+	lyrics.append(line[:-1])
+	word += len(line[:-1])
 f.close()
 
 for i in lyrics:
@@ -19,3 +19,8 @@ rr = "안녕하세요"
 rrr = "hi"
 rrrr = "안i"
 print (len(rr), len(rrr), len(rrrr))
+
+a =[1,2,3,4,5,6]
+print(sum(a))
+
+
