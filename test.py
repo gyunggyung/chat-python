@@ -1,5 +1,3 @@
-import numpy as np
-import matplotlib.pyplot as plt
 from pylab import plot, show, title, xlabel, ylabel
 f = open("lyrics.txt")
 lyrics = []
@@ -25,6 +23,19 @@ print (len(rr), len(rrr), len(rrrr))
 
 a =[1,2,3,4,5,6]
 print(sum(a))
+
+
+f = open("Score-record.txt",'a')
+f.write("going")
+for i in y:
+	data = "%d\n" % i
+	f.write(data)
+f.close()
+
+
+
+
+
 
 title('Score by line')
 xlabel('line')
