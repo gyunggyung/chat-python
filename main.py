@@ -34,18 +34,20 @@ for ly in lyrics:
 	#점수 계산 글자 수에 맞는 
 	score.append(answer*len(lyrics)/(edL-stL))
 
+lines = 1
 for kk in score:
-	print(kk)
+	print("line",lines,":",kk)
+	lines += 1
 
 # 결과 정의
 end = time.time()
 et = format(end - start, ".2f")
 accuracy = format((point/len(lyrics))*100,".2f")
 Avtime = format(sum(timez)/len(lyrics),".2f")
-NonChat = format(end - start - sum(timez),".2f")
-Allscore = format(sum(score)/len(lyrics),".2f")
+NonChat = end - start - sum(timez)
+Allscore = format(sum(score)/len(lyrics)*100,".0f")
 print("Chat : ", et,"second\n",point,"/",len(lyrics),"point")
 print("정확도 : ",accuracy,"%")
-print("평균속도 : ",Avtime)
+print("평균속도 : ",Avtime,"초")
 print("채팅 외 시간 : ",NonChat)
-print("점수 : ", Allscore)
+print("점수 : ", Allscore,"점")
