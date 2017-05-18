@@ -1,4 +1,5 @@
 import time
+from pylab import plot, show, title, xlabel, ylabel
 
 # 선언 
 point = 0
@@ -51,3 +52,17 @@ print("정확도 : ",accuracy,"%")
 print("평균속도 : ",Avtime,"초")
 print("채팅 외 시간 : ",NonChat)
 print("점수 : ", Allscore,"점")
+
+# 점수 기록
+f = open("Score-record.txt",'a')
+for i in y:
+	data = "%d\n" % i
+	f.write(data)
+f.close()
+
+# 줄별 점수를  그래프로 보여주기
+title('Score by line')
+xlabel('line')
+ylabel('score')
+plot(score,marker="o")
+show()
