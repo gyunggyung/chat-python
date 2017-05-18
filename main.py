@@ -55,7 +55,7 @@ print("점수 : ", Allscore,"점")
 
 # 점수 기록
 f = open("Score-record.txt",'a')
-for i in y:
+for i in score:
 	data = "%d\n" % i
 	f.write(data)
 f.close()
