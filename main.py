@@ -16,7 +16,7 @@ while True:
 f.close()
 
 #가사쓰기 시작
-input("Chat a lyrics:")
+input("Chat a lyrics")
 start = time.time()
 
 #가사가 끝날 때 까지
@@ -56,8 +56,9 @@ print("점수 : ", Allscore,"점")
 # 점수 기록
 f = open("Score-record.txt",'a')
 for i in score:
-	data = "%d\n" % i
+	data = "%d " % (i*100)
 	f.write(data)
+f.write("\n")
 f.close()
 
 # 줄별 점수를  그래프로 보여주기
@@ -65,4 +66,4 @@ title('Score by line')
 xlabel('line')
 ylabel('score')
 plot(score,marker="o")
-show()
+#show()
