@@ -1,22 +1,21 @@
 import time
 from pylab import plot, show, title, xlabel, ylabel
+import AnalysisLyrics
+import AnalysisScore
 
 # 선언 
 point = 0
-lyrics = []
+lyrics = AnalysisLyrics.start()
 timez = []
 score = []
 
-#가사를 리스트로 옮기기
-def Read_lyrics():
-	global lyrics
-	f = open("lyrics.txt")
-	while True:
-		line = f.readline()
-		if not line:
-			break
-		lyrics.append(line[:-1])
-	f.close()
+#역대점수
+#Av_scores = (AnalysisScore.convert())
+###########
+
+#나중에 1,2 같은 거 받아서 if else문으로 평균값만 출력할지 전체값 출력할지 고르>게
+
+##########
 
 # 점수 기록
 def Check_score(score):
@@ -38,8 +37,6 @@ def Show_score(score):
 
 #def play(lyrics):
 
-#가사쓰기 시작
-Read_lyrics()
 input("Chat a lyrics")
 start = time.time()
 
@@ -72,11 +69,13 @@ accuracy = format((point/len(lyrics))*100,".2f")
 Avtime = format(sum(timez)/len(lyrics),".2f")
 NonChat = end - start - sum(timez)
 Allscore = format(sum(score)/len(lyrics)*100,".0f")
+
+
 print("Chat : ", et,"second\n",point,"/",len(lyrics),"point")
 print("정확도 : ",accuracy,"%")
 print("평균속도 : ",Avtime,"초")
 print("채팅 외 시간 : ",NonChat)
 print("점수 : ", Allscore,"점")
-
+#print("역대 점수 : ",Av_scores,"\n역대 평균 : ",sum(Av_scores)/len(lyrics))
 Check_score(score)
 #Show_score(score)

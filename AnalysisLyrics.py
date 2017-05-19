@@ -1,17 +1,28 @@
+#AnalysisLyrics.py
 
-int = 0
-f = open("lyrics.txt")
+#전체가사
 lyrics = []
-timez = []
-score = []
-#가사를 리스트로 옮기기
-while True:
-	line = f.readline()
-	if not line:
-		break
-	lyrics.append(line[:-1])
-f.close()
+#줄별글자수
+Linelen=[]
+#한영비율
+KEP=[]
+#띄어쓰기 수
+Spacelen=[]
+#복잡도
+complexity=[]
 
+def start():
+	global lyrics
+	f = open("lyrics.txt")
+	#가사를 리스트로 옮기기
+	while True:
+		line = f.readline()
+		if not line:
+			break
+		lyrics.append(line[:-1])
+	f.close()
+	return lyrics
+	
 ####################################### 수행
 
 #한영비율 계산
@@ -32,23 +43,22 @@ def Complexity_cal(strings):
 	re = strings
 	return e
 
-print(len(lyrics))
-Linelen=[]
-#한영비율
-KEP=[]
-#띄어쓰기 수
-Spacelen=[]
-#복잡도
-complexity=[]
+#총합 계산
+def Four_information():
+	global lyrics
+	global Linelen
+	global KEP
+	global Spacelen
+	global complexity
+	i=0
+	for ly in lyrics:
+		Linelen.append(len(ly))	
+		KEP.append(KEP_cal(ly))
+		Spacelen.append(Spacelen_cal(ly))
+		complexity.append(Complexity_cal(ly))
+	print(lyrics)
+	return Linelen, KEP, Spacelen, complexity
 
-i=0
-for ly in lyrics:
-	Linelen.append(len(ly))	
-	KEP.append(KEP_cal(ly))
-	Spacelen.append(Spacelen_cal(ly)
-	complexity.append(Complxity_cal(ly)
-
-
-print(Linelen)
-print("Linelen1 : ",lyrics[0])
-print("l[1]  : ",lyrics[1])
+#print(Linelen)
+#print("Linelen1 : ",lyrics[0])
+#print("l[1]  : ",lyrics[1])
