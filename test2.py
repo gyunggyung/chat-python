@@ -10,18 +10,15 @@ while True:
 	if not line: break
 	ReadScore.append(line)
 
-print(len(ReadScore)," ",ReadScore)
 #나중에는 줄 수로 계산
 ScoreLen = 5
 
-
-Slist = [0]*ScoreLen
-test = ReadScore[0]
-test = test.split(' ')
-for i in range(0,ScoreLen):
-	Slist[i] = int(test[i])
-print(Slist)
-ReadAllScore.append(Slist)
-ReadAllScore.append(Slist)
-print(Slist[0]+32)
-print(ReadAllScore)
+for i in range(0, len(ReadScore)):
+	Slist = [i]*ScoreLen
+	test = ReadScore[i]
+	test = test.split(' ')
+	for i in range(0,ScoreLen):
+		Slist[i] = int(test[i])
+	ReadAllScore.append(Slist)
+	print(ReadAllScore)
+	print("-"*5)
