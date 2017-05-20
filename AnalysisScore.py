@@ -46,6 +46,6 @@ def convert():
 		OneLine=0
 		for j in range(len(ReadScore)+1):
 			OneLine += ReadAllScore[j][i]
-		LineScore.append(OneLine/len(ReadScore))
+		LineScore.append(int(OneLine/len(ReadScore)))
 	return LineScore
 
