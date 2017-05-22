@@ -8,7 +8,7 @@ ReadAllScore=[[0]*5]
 #문장 별 점수 GG
 LineScore=[]
 
-def start():
+def start_s():
 	global ReadScore
 	#txt 파일 받기
 	f = open("Score-record.txt", 'r')
@@ -20,15 +20,15 @@ def start():
 	return ReadScore
 
 #나중에 1,2 같은 거 받아서 if else문으로 평균값만 출력할지 전체값 출력할지 고르게
-def convert(): 
+def convert(lyrics): 
 	global ReadScore
 	global ReadAllScore
 	global LineScore
 	
-	ReadScore = start()
+	ReadScore = start_s()
 
 	#나중에는 줄 수로 계산
-	ScoreLen = len(AnalysisLyrics.start())
+	ScoreLen = len(lyrics)
 
 	#읽은 파일 줄 수 만큼 반복하면서 
 	for i in range(len(ReadScore)):
@@ -47,5 +47,6 @@ def convert():
 		for j in range(len(ReadScore)+1):
 			OneLine += ReadAllScore[j][i]
 		LineScore.append(int(OneLine/len(ReadScore)))
+		print("LineScore : ",LineScore)
 	return LineScore
 

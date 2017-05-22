@@ -1,21 +1,12 @@
 import time
-from pylab import plot, show, title, xlabel, ylabel
+#from pylab import plot, show, title, xlabel, ylabel
 import AnalysisLyrics
-import AnalysisScore
 
 # 선언 
 point = 0
-lyrics = AnalysisLyrics.start()
+lyrics = AnalysisLyrics.start_l()
 timez = []
 score = []
-
-#역대점수
-#Av_scores = (AnalysisScore.convert())
-###########
-
-#나중에 1,2 같은 거 받아서 if else문으로 평균값만 출력할지 전체값 출력할지 고르>게
-
-##########
 
 # 점수 기록
 def Check_score(score):
@@ -28,14 +19,13 @@ def Check_score(score):
 
 # 줄별 점수를  그래프로 보여주기
 # score랑 title xlabel ylabel도 나중에 받을 예정
-def Show_score(score):	
-	title('Score by line')
-	xlabel('line')
-	ylabel('score')
-	plot(score,marker="o")
-	show()
-
-#def play(lyrics):
+# 현재는 사용하지 않음
+#def Show_score(score):	
+#	title('Score by line')
+#	xlabel('line')
+#	ylabel('score')
+#	plot(score,marker="o")
+#	show()
 
 input("Chat a lyrics")
 start = time.time()
@@ -56,7 +46,6 @@ for ly in lyrics:
 	#점수 계산 글자 수에 맞는 
 	score.append(answer*len(lyrics)/(edL-stL))
 
-
 lines = 1
 for kk in score:
 	print("line",lines,":",kk)
@@ -70,12 +59,10 @@ Avtime = format(sum(timez)/len(lyrics),".2f")
 NonChat = end - start - sum(timez)
 Allscore = format(sum(score)/len(lyrics)*100,".0f")
 
-
 print("Chat : ", et,"second\n",point,"/",len(lyrics),"point")
 print("정확도 : ",accuracy,"%")
 print("평균속도 : ",Avtime,"초")
 print("채팅 외 시간 : ",NonChat)
 print("점수 : ", Allscore,"점")
-#print("역대 점수 : ",Av_scores,"\n역대 평균 : ",sum(Av_scores)/len(lyrics))
 Check_score(score)
 #Show_score(score)
