@@ -28,7 +28,7 @@ Save the data below in the file 'Statistical_Value.csv'.
 Analyze the 'Statistical_Value.csv' file, analyze the relationship between the data obtained from 'AnalysisLyrics.py' and the typing score.  
 <pre><code>
 > all [, -1] %>% cor
-			  AVscore        KEP    Linelen    Spacelen  complexity
+              AVscore        KEP    Linelen    Spacelen  complexity
 AVscore     1.0000000  0.3891366 -0.6516162 -0.46269420  0.22641782
 KEP         0.3891366  1.0000000 -0.2419969  0.14275028  0.70893567
 Linelen    -0.6516162 -0.2419969  1.0000000  0.74986696 -0.20604870
