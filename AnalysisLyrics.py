@@ -23,6 +23,7 @@ def start_l():
 			break
 		lyrics.append(line[:-1])
 	f.close()
+	print(len(lyrics))
 	return lyrics
 	
 ####################################### 수행
@@ -39,11 +40,11 @@ def KEP_cal(strings):
 		return 0
 	else:
 		#중간 값 50를 기준으로 한영비율만큼 + -
-		diff = ko - en
+		diff = kolen - enlen
 		if diff > 0:
-			return 50+(diff/(ko+en))*50
+			return 50+(diff/(kolen+enlen))*50
 		elif diff < 0:
-			return 50-(diff/(ko+en))*50
+			return 50-(diff/(kolen+enlen))*50
 		else:
 			return 50
 		return kolen/enlen
@@ -71,6 +72,8 @@ def Four_information():
 	global Spacelen
 	global complexity
 	#평균 점수
+	print("테스트 : ",lyrics)
+
 	AVscore = AnalysisScore.convert(lyrics)
 	i=0
 	for ly in lyrics:
