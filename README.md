@@ -24,7 +24,7 @@ Save the data below in the file 'Statistical_Value.csv'.
 - The number of characters with a foot (complexity)
 
 #### R
-![](Rs.png)  
+![](R/Rs.png)  
 Analyze the 'Statistical_Value.csv' file, analyze the relationship between the data obtained from 'AnalysisLyrics.py' and the typing score.
 ![](R/Rplot.png)  
 
