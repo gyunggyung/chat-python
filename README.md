@@ -26,7 +26,16 @@ Save the data below in the file 'Statistical_Value.csv'.
 #### R
 ![](R/Rplot.png)  
 Analyze the 'Statistical_Value.csv' file, analyze the relationship between the data obtained from 'AnalysisLyrics.py' and the typing score.  
-![](R/Rs.png)  
+<pre><code>
+> all [, -1] %>% cor
+			  AVscore        KEP    Linelen    Spacelen  complexity
+AVscore     1.0000000  0.3891366 -0.6516162 -0.46269420  0.22641782
+KEP         0.3891366  1.0000000 -0.2419969  0.14275028  0.70893567
+Linelen    -0.6516162 -0.2419969  1.0000000  0.74986696 -0.20604870
+Spacelen   -0.4626942  0.1427503  0.7498670  1.00000000  0.05701685
+complexity  0.2264178  0.7089357 -0.2060487  0.05701685  1.00000000
+</code></pre>
+> This is my experiment.
 
 #### Forward
 If you know what you're missing, you can learn that part.  
