@@ -20,7 +20,7 @@ Save the data below in the file 'Statistical_Value.csv'.
 - Typing score from 'AnalysisScore.py'
 - Number of characters in line
 - The ratio of Korean to English
-- Number of spaces
+- Number of spaces  
 And in the 'Association_analysis' file, we use the above analysis condition and the average score to store the influential condition (what is positive, negative or positive), lowest score (how many points, how many).
 
 #### R
