@@ -38,7 +38,26 @@ complexity  0.2264178  0.7089357 -0.2060487  0.05701685  1.00000000
 </code></pre>
 > This is my experiment.
 
+#### MakeSupporter.py
+It is the file which makes the lyrics to practice the insufficient part.
+
+1. Find the item with the highest correlation coefficient found in the 'Association_analysis' file.
+2. Create a file named 'lyrics.txt' in the 'upgrade' folder with the top 16% that causes a low score for that item.
+
+#### upgrade
+- It is a folder to practice the insufficient part.
+- The folder is copyed to the above files.
+- The housework exercises here are exercises to supplement the lack.
+- Practice typing again after practicing the defective part and see how it changes.
+
 #### Forward
 If you know what you're missing, you can learn that part.  
 Learning the insufficient part can offset the insufficient part.  
 Now this is a trivial conclusion, but this program will change.
+
+#### behind story
+I was thinking of practicing a similar type of batter based on all analytical values, not on the basis of a large correlation coefficient.  
+However, I could not report that the correlation coefficient was too low.  
+I will make the analysis a bit more precise, and then I will create a batting practice based on all the analytical values.
+
+
