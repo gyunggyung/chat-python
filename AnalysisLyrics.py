@@ -1,6 +1,7 @@
 #AnalysisLyrics.py
 import AnalysisScore
 import re
+import numpy as np
 
 #전체가사
 lyrics = []
@@ -60,8 +61,32 @@ def Complexity_cal(strings):
 	lens = len(su.findall(strings))
 	return (lens/len(strings))*100
 
-
-
+#비율 계산 평균, 줄별 수, 한영비율,띄어쓰기 수, 복잡도
+def Association_analysis(AVscore ,Linelen, KEP, Spacelen, complexity):
+	correlation_coefficient = np.corrcoef([AVscore ,Linelen, KEP, Spacelen, complexity])
+	Cmax = 0
+	basket = 0
+	Nmax = 0
+	sign = 1
+	#가장큰 상관계수 찾기
+	for i in range(1, 4):
+		Nsign = 1
+		if(correlation_coefficient[0][i] < 0):
+			basket = correlation_coefficient[0][i] * -1
+			Nsign = 0
+		else:
+			basket = correlation_coefficient[0][i]
+		if Cmax < basket:
+			Cmax = basket
+			Nmax = i
+			sign = Nsign
+	switch_map = {1:'Linelen', 2:' KEP', 3:'Spacelen', 4:'complexity'}
+	print("showing")
+	print(Nmax)
+	print(switch_map[Nmax])
+	print(Cmax)
+	#가장큰 상관계수의 종류, 음수인지 양수인지, 상관계수
+	return (switch_map[Nmax], str(sign), str(Cmax))
 
 #총합 계산
 def Four_information():
@@ -128,5 +153,16 @@ def Four_information():
 		f.write(str(complexity[i]))
 		f.write("\n")
 	f.close()
+	#####################################
+	f = open("Association_analysis",'w')
+	#가장 관련이 큰 녀석이 어떤 녀석인지
+	best_coefficient = Association_analysis(AVscore ,Linelen, KEP, Spacelen, complexity)
+	print(best_coefficient)
+	for i in range(len(best_coefficient)):
+		f.write(best_coefficient[i])
+		f.write('\n')
+	f.close()
+	#####################################
+
 	return Linelen, KEP, Spacelen, complexity
 
