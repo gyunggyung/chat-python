@@ -158,9 +158,22 @@ def Four_information():
 	#가장 관련이 큰 녀석이 어떤 녀석인지
 	best_coefficient = Association_analysis(AVscore ,Linelen, KEP, Spacelen, complexity)
 	print(best_coefficient)
+	#(무엇인지, 음수인지 양수인지, 상관계수는 얼마나 되는지)
 	for i in range(len(best_coefficient)):
 		f.write(best_coefficient[i])
 		f.write('\n')
+	#가장 낮음 점수 저장
+	k = 0
+	lowest_score = AVscore[4]
+	Num_lowest_score = 0
+	for AV in AVscore:
+		if lowest_score > AV:
+			lowest_score = AV
+			Num_lowest_score = k
+		k += 1
+	f.write(str(lowest_score))
+	f.write("\n")
+	f.write(str(Num_lowest_score))
 	f.close()
 	#####################################
 
