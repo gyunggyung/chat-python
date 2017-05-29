@@ -58,6 +58,6 @@ Now this is a trivial conclusion, but this program will change.
 #### behind story
 I was thinking of practicing a similar type of batter based on all analytical values, not on the basis of a large correlation coefficient.  
 However, I could not report that the correlation coefficient was too low.  
-I will make the analysis a bit more precise, and then I will create a batting practice based on all the analytical values.
+I will make the analysis a bit more precise, and then I will create a chatting practice based on all the analytical values.
 
 
